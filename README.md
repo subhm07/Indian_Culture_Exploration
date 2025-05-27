@@ -117,3 +117,30 @@ Culturally rich and educational
 
 Perfect for tourism, education, and awareness-building projects
 
+
+from pptx import Presentation
+from pptx.util import Inches
+
+prs = Presentation()
+
+slides_content = [
+    ("Rashtra Sanskriti Darshan", "Experience India's Cultural Mosaic Responsibly"),
+    ("App Overview", "A web app exploring Indian culture\n4 tabs: Arts, Festivals, Travel, Eco\nStreamlit-powered & hackathon-ready"),
+    ("Technologies Used", "Streamlit\nPandas\nPlotly Express\nPIL\nCustom CSS"),
+    ("Living Arts Tab", "Filter by State & Art Type\nTreemap Visuals\nWorkshops Information"),
+    ("Cultural Calendar Tab", "Festival timeline\nSorted by month\nRegion-based color coding"),
+    ("Travel Planner Tab", "Map of crafts\nItinerary builder\nDistrict & Season info"),
+    ("Eco Practices Tab", "Cultural quiz\nHeritage eco-stays\nEthical tourism awareness"),
+    ("Custom Styling Features", "Ethnic background\nButton color override\nFont customization"),
+    ("Data Sources", "Govt. craft DB\nFestival API\nOptimized with cache"),
+    ("Hackathon Highlights", "Live datasets\nResponsive UI\nEducational impact"),
+    ("Conclusion", "Blends tech + tradition\nRaises cultural awareness\nEncourages sustainable tourism")
+]
+
+for title, content in slides_content:
+    slide = prs.slides.add_slide(prs.slide_layouts[1])
+    slide.shapes.title.text = title
+    slide.placeholders[1].text = content
+
+prs.save("rashtra_sanskriti_presentation.pptx")
+
